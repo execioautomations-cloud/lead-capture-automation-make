@@ -1,3 +1,10 @@
+## Demo
+
+[▶️ Watch the 3-minute walkthrough](YOUR_LOOM_LINK)
+
+![Make scenario](make-scenario.png)
+![Airtable records](airtable.png)
+![Slack alerts](slack.png)
 1	# Lead Capture Automation — Google Forms → Airtable → Slack
 2	
 3	Automated intake pipeline that captures inbound quote requests, deduplicates them
