@@ -1,0 +1,3168 @@
+{
+    "name": "Integration Google Forms",
+    "flow": [
+        {
+            "id": 4,
+            "module": "google-forms:watchResponses",
+            "version": 2,
+            "parameters": {
+                "__IMTCONN__": 11487092,
+                "formId": "1DQAmPwLMHr3BSNpLm-Ooekx-yEebhpSj0qzu84qUO_4",
+                "limit": 6
+            },
+            "mapper": {},
+            "metadata": {
+                "designer": {
+                    "x": 0,
+                    "y": 0
+                },
+                "setupValidation": {
+                    "version": 1,
+                    "configuration": "c4cda553a76c8362",
+                    "result": {
+                        "valid": true,
+                        "fields": []
+                    }
+                },
+                "restore": {
+                    "parameters": {
+                        "__IMTCONN__": {
+                            "label": "Asad's Google connection (execioautomations@gmail.com)",
+                            "data": {
+                                "scoped": "true",
+                                "connection": "google"
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "__IMTCONN__",
+                        "type": "account:google",
+                        "label": "Connection",
+                        "required": true
+                    },
+                    {
+                        "name": "formId",
+                        "type": "text",
+                        "label": "Form ID",
+                        "required": true
+                    },
+                    {
+                        "name": "limit",
+                        "type": "uinteger",
+                        "label": "Limit",
+                        "required": true
+                    }
+                ],
+                "interface": [
+                    {
+                        "name": "responseId",
+                        "type": "text",
+                        "label": "Response ID"
+                    },
+                    {
+                        "name": "createTime",
+                        "type": "date",
+                        "label": "Create Time"
+                    },
+                    {
+                        "name": "lastSubmittedTime",
+                        "type": "date",
+                        "label": "Last Submitted Time"
+                    },
+                    {
+                        "name": "respondentEmail",
+                        "type": "text",
+                        "label": "Respondent Email"
+                    },
+                    {
+                        "name": "answers",
+                        "spec": [
+                            {
+                                "name": "4201a29f",
+                                "spec": [
+                                    {
+                                        "name": "questionId",
+                                        "type": "text",
+                                        "label": "Question ID"
+                                    },
+                                    {
+                                        "name": "grade",
+                                        "spec": [
+                                            {
+                                                "name": "score",
+                                                "type": "number",
+                                                "label": "Score"
+                                            },
+                                            {
+                                                "name": "correct",
+                                                "type": "boolean",
+                                                "label": "Correct"
+                                            },
+                                            {
+                                                "name": "feedback",
+                                                "spec": [
+                                                    {
+                                                        "name": "text",
+                                                        "type": "text",
+                                                        "label": "Text"
+                                                    },
+                                                    {
+                                                        "name": "material",
+                                                        "spec": [
+                                                            {
+                                                                "name": "link",
+                                                                "spec": [
+                                                                    {
+                                                                        "name": "uri",
+                                                                        "type": "text",
+                                                                        "label": "URI"
+                                                                    },
+                                                                    {
+                                                                        "name": "displayText",
+                                                                        "type": "text",
+                                                                        "label": "Display Text"
+                                                                    }
+                                                                ],
+                                                                "type": "collection",
+                                                                "label": "Link"
+                                                            },
+                                                            {
+                                                                "name": "video",
+                                                                "spec": [
+                                                                    {
+                                                                        "name": "youtubeUri",
+                                                                        "type": "text",
+                                                                        "label": "Youtube URI"
+                                                                    },
+                                                                    {
+                                                                        "name": "displayText",
+                                                                        "type": "text",
+                                                                        "label": "Display Text"
+                                                                    }
+                                                                ],
+                                                                "type": "collection",
+                                                                "label": "Video"
+                                                            }
+                                                        ],
+                                                        "type": "array",
+                                                        "label": "Material"
+                                                    },
+                                                    {
+                                                        "name": "textAnswers",
+                                                        "spec": [
+                                                            {
+                                                                "name": "answers",
+                                                                "spec": [
+                                                                    {
+                                                                        "name": "value",
+                                                                        "type": "text",
+                                                                        "label": "value"
+                                                                    }
+                                                                ],
+                                                                "type": "array",
+                                                                "label": "Answers"
+                                                            }
+                                                        ],
+                                                        "type": "collection",
+                                                        "label": "Text Answers"
+                                                    },
+                                                    {
+                                                        "name": "fileUploadAnswers",
+                                                        "spec": [
+                                                            {
+                                                                "name": "answers",
+                                                                "spec": [
+                                                                    {
+                                                                        "name": "fileId",
+                                                                        "type": "text",
+                                                                        "label": "File ID"
+                                                                    },
+                                                                    {
+                                                                        "name": "fileName",
+                                                                        "type": "text",
+                                                                        "label": "File Name"
+                                                                    },
+                                                                    {
+                                                                        "name": "mimeType",
+                                                                        "type": "text",
+                                                                        "label": "MIME Type"
+                                                                    }
+                                                                ],
+                                                                "type": "array",
+                                                                "label": "Answers"
+                                                            }
+                                                        ],
+                                                        "type": "collection",
+                                                        "label": "File Upload Answers"
+                                                    }
+                                                ],
+                                                "type": "collection",
+                                                "label": "Feedback"
+                                            }
+                                        ],
+                                        "type": "collection",
+                                        "label": "Grade"
+                                    }
+                                ],
+                                "type": "collection",
+                                "label": "Full Name "
+                            },
+                            {
+                                "name": "11bc304b",
+                                "spec": [
+                                    {
+                                        "name": "questionId",
+                                        "type": "text",
+                                        "label": "Question ID"
+                                    },
+                                    {
+                                        "name": "grade",
+                                        "spec": [
+                                            {
+                                                "name": "score",
+                                                "type": "number",
+                                                "label": "Score"
+                                            },
+                                            {
+                                                "name": "correct",
+                                                "type": "boolean",
+                                                "label": "Correct"
+                                            },
+                                            {
+                                                "name": "feedback",
+                                                "spec": [
+                                                    {
+                                                        "name": "text",
+                                                        "type": "text",
+                                                        "label": "Text"
+                                                    },
+                                                    {
+                                                        "name": "material",
+                                                        "spec": [
+                                                            {
+                                                                "name": "link",
+                                                                "spec": [
+                                                                    {
+                                                                        "name": "uri",
+                                                                        "type": "text",
+                                                                        "label": "URI"
+                                                                    },
+                                                                    {
+                                                                        "name": "displayText",
+                                                                        "type": "text",
+                                                                        "label": "Display Text"
+                                                                    }
+                                                                ],
+                                                                "type": "collection",
+                                                                "label": "Link"
+                                                            },
+                                                            {
+                                                                "name": "video",
+                                                                "spec": [
+                                                                    {
+                                                                        "name": "youtubeUri",
+                                                                        "type": "text",
+                                                                        "label": "Youtube URI"
+                                                                    },
+                                                                    {
+                                                                        "name": "displayText",
+                                                                        "type": "text",
+                                                                        "label": "Display Text"
+                                                                    }
+                                                                ],
+                                                                "type": "collection",
+                                                                "label": "Video"
+                                                            }
+                                                        ],
+                                                        "type": "array",
+                                                        "label": "Material"
+                                                    },
+                                                    {
+                                                        "name": "textAnswers",
+                                                        "spec": [
+                                                            {
+                                                                "name": "answers",
+                                                                "spec": [
+                                                                    {
+                                                                        "name": "value",
+                                                                        "type": "text",
+                                                                        "label": "value"
+                                                                    }
+                                                                ],
+                                                                "type": "array",
+                                                                "label": "Answers"
+                                                            }
+                                                        ],
+                                                        "type": "collection",
+                                                        "label": "Text Answers"
+                                                    },
+                                                    {
+                                                        "name": "fileUploadAnswers",
+                                                        "spec": [
+                                                            {
+                                                                "name": "answers",
+                                                                "spec": [
+                                                                    {
+                                                                        "name": "fileId",
+                                                                        "type": "text",
+                                                                        "label": "File ID"
+                                                                    },
+                                                                    {
+                                                                        "name": "fileName",
+                                                                        "type": "text",
+                                                                        "label": "File Name"
+                                                                    },
+                                                                    {
+                                                                        "name": "mimeType",
+                                                                        "type": "text",
+                                                                        "label": "MIME Type"
+                                                                    }
+                                                                ],
+                                                                "type": "array",
+                                                                "label": "Answers"
+                                                            }
+                                                        ],
+                                                        "type": "collection",
+                                                        "label": "File Upload Answers"
+                                                    }
+                                                ],
+                                                "type": "collection",
+                                                "label": "Feedback"
+                                            }
+                                        ],
+                                        "type": "collection",
+                                        "label": "Grade"
+                                    }
+                                ],
+                                "type": "collection",
+                                "label": "  Email  "
+                            },
+                            {
+                                "name": "65218836",
+                                "spec": [
+                                    {
+                                        "name": "questionId",
+                                        "type": "text",
+                                        "label": "Question ID"
+                                    },
+                                    {
+                                        "name": "grade",
+                                        "spec": [
+                                            {
+                                                "name": "score",
+                                                "type": "number",
+                                                "label": "Score"
+                                            },
+                                            {
+                                                "name": "correct",
+                                                "type": "boolean",
+                                                "label": "Correct"
+                                            },
+                                            {
+                                                "name": "feedback",
+                                                "spec": [
+                                                    {
+                                                        "name": "text",
+                                                        "type": "text",
+                                                        "label": "Text"
+                                                    },
+                                                    {
+                                                        "name": "material",
+                                                        "spec": [
+                                                            {
+                                                                "name": "link",
+                                                                "spec": [
+                                                                    {
+                                                                        "name": "uri",
+                                                                        "type": "text",
+                                                                        "label": "URI"
+                                                                    },
+                                                                    {
+                                                                        "name": "displayText",
+                                                                        "type": "text",
+                                                                        "label": "Display Text"
+                                                                    }
+                                                                ],
+                                                                "type": "collection",
+                                                                "label": "Link"
+                                                            },
+                                                            {
+                                                                "name": "video",
+                                                                "spec": [
+                                                                    {
+                                                                        "name": "youtubeUri",
+                                                                        "type": "text",
+                                                                        "label": "Youtube URI"
+                                                                    },
+                                                                    {
+                                                                        "name": "displayText",
+                                                                        "type": "text",
+                                                                        "label": "Display Text"
+                                                                    }
+                                                                ],
+                                                                "type": "collection",
+                                                                "label": "Video"
+                                                            }
+                                                        ],
+                                                        "type": "array",
+                                                        "label": "Material"
+                                                    },
+                                                    {
+                                                        "name": "textAnswers",
+                                                        "spec": [
+                                                            {
+                                                                "name": "answers",
+                                                                "spec": [
+                                                                    {
+                                                                        "name": "value",
+                                                                        "type": "text",
+                                                                        "label": "value"
+                                                                    }
+                                                                ],
+                                                                "type": "array",
+                                                                "label": "Answers"
+                                                            }
+                                                        ],
+                                                        "type": "collection",
+                                                        "label": "Text Answers"
+                                                    },
+                                                    {
+                                                        "name": "fileUploadAnswers",
+                                                        "spec": [
+                                                            {
+                                                                "name": "answers",
+                                                                "spec": [
+                                                                    {
+                                                                        "name": "fileId",
+                                                                        "type": "text",
+                                                                        "label": "File ID"
+                                                                    },
+                                                                    {
+                                                                        "name": "fileName",
+                                                                        "type": "text",
+                                                                        "label": "File Name"
+                                                                    },
+                                                                    {
+                                                                        "name": "mimeType",
+                                                                        "type": "text",
+                                                                        "label": "MIME Type"
+                                                                    }
+                                                                ],
+                                                                "type": "array",
+                                                                "label": "Answers"
+                                                            }
+                                                        ],
+                                                        "type": "collection",
+                                                        "label": "File Upload Answers"
+                                                    }
+                                                ],
+                                                "type": "collection",
+                                                "label": "Feedback"
+                                            }
+                                        ],
+                                        "type": "collection",
+                                        "label": "Grade"
+                                    }
+                                ],
+                                "type": "collection",
+                                "label": "Phone Number"
+                            },
+                            {
+                                "name": "4d2093fa",
+                                "spec": [
+                                    {
+                                        "name": "questionId",
+                                        "type": "text",
+                                        "label": "Question ID"
+                                    },
+                                    {
+                                        "name": "grade",
+                                        "spec": [
+                                            {
+                                                "name": "score",
+                                                "type": "number",
+                                                "label": "Score"
+                                            },
+                                            {
+                                                "name": "correct",
+                                                "type": "boolean",
+                                                "label": "Correct"
+                                            },
+                                            {
+                                                "name": "feedback",
+                                                "spec": [
+                                                    {
+                                                        "name": "text",
+                                                        "type": "text",
+                                                        "label": "Text"
+                                                    },
+                                                    {
+                                                        "name": "material",
+                                                        "spec": [
+                                                            {
+                                                                "name": "link",
+                                                                "spec": [
+                                                                    {
+                                                                        "name": "uri",
+                                                                        "type": "text",
+                                                                        "label": "URI"
+                                                                    },
+                                                                    {
+                                                                        "name": "displayText",
+                                                                        "type": "text",
+                                                                        "label": "Display Text"
+                                                                    }
+                                                                ],
+                                                                "type": "collection",
+                                                                "label": "Link"
+                                                            },
+                                                            {
+                                                                "name": "video",
+                                                                "spec": [
+                                                                    {
+                                                                        "name": "youtubeUri",
+                                                                        "type": "text",
+                                                                        "label": "Youtube URI"
+                                                                    },
+                                                                    {
+                                                                        "name": "displayText",
+                                                                        "type": "text",
+                                                                        "label": "Display Text"
+                                                                    }
+                                                                ],
+                                                                "type": "collection",
+                                                                "label": "Video"
+                                                            }
+                                                        ],
+                                                        "type": "array",
+                                                        "label": "Material"
+                                                    },
+                                                    {
+                                                        "name": "textAnswers",
+                                                        "spec": [
+                                                            {
+                                                                "name": "answers",
+                                                                "spec": [
+                                                                    {
+                                                                        "name": "value",
+                                                                        "type": "text",
+                                                                        "label": "value"
+                                                                    }
+                                                                ],
+                                                                "type": "array",
+                                                                "label": "Answers"
+                                                            }
+                                                        ],
+                                                        "type": "collection",
+                                                        "label": "Text Answers"
+                                                    },
+                                                    {
+                                                        "name": "fileUploadAnswers",
+                                                        "spec": [
+                                                            {
+                                                                "name": "answers",
+                                                                "spec": [
+                                                                    {
+                                                                        "name": "fileId",
+                                                                        "type": "text",
+                                                                        "label": "File ID"
+                                                                    },
+                                                                    {
+                                                                        "name": "fileName",
+                                                                        "type": "text",
+                                                                        "label": "File Name"
+                                                                    },
+                                                                    {
+                                                                        "name": "mimeType",
+                                                                        "type": "text",
+                                                                        "label": "MIME Type"
+                                                                    }
+                                                                ],
+                                                                "type": "array",
+                                                                "label": "Answers"
+                                                            }
+                                                        ],
+                                                        "type": "collection",
+                                                        "label": "File Upload Answers"
+                                                    }
+                                                ],
+                                                "type": "collection",
+                                                "label": "Feedback"
+                                            }
+                                        ],
+                                        "type": "collection",
+                                        "label": "Grade"
+                                    }
+                                ],
+                                "type": "collection",
+                                "label": "Country"
+                            },
+                            {
+                                "name": "29a0b389",
+                                "spec": [
+                                    {
+                                        "name": "questionId",
+                                        "type": "text",
+                                        "label": "Question ID"
+                                    },
+                                    {
+                                        "name": "grade",
+                                        "spec": [
+                                            {
+                                                "name": "score",
+                                                "type": "number",
+                                                "label": "Score"
+                                            },
+                                            {
+                                                "name": "correct",
+                                                "type": "boolean",
+                                                "label": "Correct"
+                                            },
+                                            {
+                                                "name": "feedback",
+                                                "spec": [
+                                                    {
+                                                        "name": "text",
+                                                        "type": "text",
+                                                        "label": "Text"
+                                                    },
+                                                    {
+                                                        "name": "material",
+                                                        "spec": [
+                                                            {
+                                                                "name": "link",
+                                                                "spec": [
+                                                                    {
+                                                                        "name": "uri",
+                                                                        "type": "text",
+                                                                        "label": "URI"
+                                                                    },
+                                                                    {
+                                                                        "name": "displayText",
+                                                                        "type": "text",
+                                                                        "label": "Display Text"
+                                                                    }
+                                                                ],
+                                                                "type": "collection",
+                                                                "label": "Link"
+                                                            },
+                                                            {
+                                                                "name": "video",
+                                                                "spec": [
+                                                                    {
+                                                                        "name": "youtubeUri",
+                                                                        "type": "text",
+                                                                        "label": "Youtube URI"
+                                                                    },
+                                                                    {
+                                                                        "name": "displayText",
+                                                                        "type": "text",
+                                                                        "label": "Display Text"
+                                                                    }
+                                                                ],
+                                                                "type": "collection",
+                                                                "label": "Video"
+                                                            }
+                                                        ],
+                                                        "type": "array",
+                                                        "label": "Material"
+                                                    },
+                                                    {
+                                                        "name": "textAnswers",
+                                                        "spec": [
+                                                            {
+                                                                "name": "answers",
+                                                                "spec": [
+                                                                    {
+                                                                        "name": "value",
+                                                                        "type": "text",
+                                                                        "label": "value"
+                                                                    }
+                                                                ],
+                                                                "type": "array",
+                                                                "label": "Answers"
+                                                            }
+                                                        ],
+                                                        "type": "collection",
+                                                        "label": "Text Answers"
+                                                    },
+                                                    {
+                                                        "name": "fileUploadAnswers",
+                                                        "spec": [
+                                                            {
+                                                                "name": "answers",
+                                                                "spec": [
+                                                                    {
+                                                                        "name": "fileId",
+                                                                        "type": "text",
+                                                                        "label": "File ID"
+                                                                    },
+                                                                    {
+                                                                        "name": "fileName",
+                                                                        "type": "text",
+                                                                        "label": "File Name"
+                                                                    },
+                                                                    {
+                                                                        "name": "mimeType",
+                                                                        "type": "text",
+                                                                        "label": "MIME Type"
+                                                                    }
+                                                                ],
+                                                                "type": "array",
+                                                                "label": "Answers"
+                                                            }
+                                                        ],
+                                                        "type": "collection",
+                                                        "label": "File Upload Answers"
+                                                    }
+                                                ],
+                                                "type": "collection",
+                                                "label": "Feedback"
+                                            }
+                                        ],
+                                        "type": "collection",
+                                        "label": "Grade"
+                                    }
+                                ],
+                                "type": "collection",
+                                "label": "  Service Needed  "
+                            },
+                            {
+                                "name": "6bc0bfb0",
+                                "spec": [
+                                    {
+                                        "name": "questionId",
+                                        "type": "text",
+                                        "label": "Question ID"
+                                    },
+                                    {
+                                        "name": "grade",
+                                        "spec": [
+                                            {
+                                                "name": "score",
+                                                "type": "number",
+                                                "label": "Score"
+                                            },
+                                            {
+                                                "name": "correct",
+                                                "type": "boolean",
+                                                "label": "Correct"
+                                            },
+                                            {
+                                                "name": "feedback",
+                                                "spec": [
+                                                    {
+                                                        "name": "text",
+                                                        "type": "text",
+                                                        "label": "Text"
+                                                    },
+                                                    {
+                                                        "name": "material",
+                                                        "spec": [
+                                                            {
+                                                                "name": "link",
+                                                                "spec": [
+                                                                    {
+                                                                        "name": "uri",
+                                                                        "type": "text",
+                                                                        "label": "URI"
+                                                                    },
+                                                                    {
+                                                                        "name": "displayText",
+                                                                        "type": "text",
+                                                                        "label": "Display Text"
+                                                                    }
+                                                                ],
+                                                                "type": "collection",
+                                                                "label": "Link"
+                                                            },
+                                                            {
+                                                                "name": "video",
+                                                                "spec": [
+                                                                    {
+                                                                        "name": "youtubeUri",
+                                                                        "type": "text",
+                                                                        "label": "Youtube URI"
+                                                                    },
+                                                                    {
+                                                                        "name": "displayText",
+                                                                        "type": "text",
+                                                                        "label": "Display Text"
+                                                                    }
+                                                                ],
+                                                                "type": "collection",
+                                                                "label": "Video"
+                                                            }
+                                                        ],
+                                                        "type": "array",
+                                                        "label": "Material"
+                                                    },
+                                                    {
+                                                        "name": "textAnswers",
+                                                        "spec": [
+                                                            {
+                                                                "name": "answers",
+                                                                "spec": [
+                                                                    {
+                                                                        "name": "value",
+                                                                        "type": "text",
+                                                                        "label": "value"
+                                                                    }
+                                                                ],
+                                                                "type": "array",
+                                                                "label": "Answers"
+                                                            }
+                                                        ],
+                                                        "type": "collection",
+                                                        "label": "Text Answers"
+                                                    },
+                                                    {
+                                                        "name": "fileUploadAnswers",
+                                                        "spec": [
+                                                            {
+                                                                "name": "answers",
+                                                                "spec": [
+                                                                    {
+                                                                        "name": "fileId",
+                                                                        "type": "text",
+                                                                        "label": "File ID"
+                                                                    },
+                                                                    {
+                                                                        "name": "fileName",
+                                                                        "type": "text",
+                                                                        "label": "File Name"
+                                                                    },
+                                                                    {
+                                                                        "name": "mimeType",
+                                                                        "type": "text",
+                                                                        "label": "MIME Type"
+                                                                    }
+                                                                ],
+                                                                "type": "array",
+                                                                "label": "Answers"
+                                                            }
+                                                        ],
+                                                        "type": "collection",
+                                                        "label": "File Upload Answers"
+                                                    }
+                                                ],
+                                                "type": "collection",
+                                                "label": "Feedback"
+                                            }
+                                        ],
+                                        "type": "collection",
+                                        "label": "Grade"
+                                    }
+                                ],
+                                "type": "collection",
+                                "label": "  Estimated Budget  "
+                            }
+                        ],
+                        "type": "collection",
+                        "label": "Answers"
+                    },
+                    {
+                        "name": "totalScore",
+                        "type": "number",
+                        "label": "Total Score"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 24,
+            "module": "airtable:makeApiCall",
+            "version": 3,
+            "parameters": {
+                "__IMTCONN__": 11487710
+            },
+            "filter": null,
+            "mapper": {
+                "qs": [
+                    {
+                        "key": "maxRecords",
+                        "value": "1"
+                    },
+                    {
+                        "key": "filterByFormula",
+                        "value": "LOWER({Email}) = \"{{lower(trim(get(4.answers.`11bc304b`; \"textAnswers.answers.1.value\")))}}\""
+                    }
+                ],
+                "url": "v0/app3kJfLdlgpL7AOK/tbloGe5mA3fPIOrE2",
+                "method": "GET"
+            },
+            "metadata": {
+                "designer": {
+                    "x": 600,
+                    "y": 0
+                },
+                "restore": {
+                    "expect": {
+                        "method": {
+                            "mode": "chose",
+                            "label": "GET"
+                        }
+                    },
+                    "parameters": {
+                        "__IMTCONN__": {
+                            "label": "Asad's Airtable Token or Key connection"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "__IMTCONN__",
+                        "type": "account:airtable3,airtable2",
+                        "label": "Connection",
+                        "required": true
+                    }
+                ],
+                "expect": [
+                    {
+                        "name": "url",
+                        "type": "text",
+                        "label": "URL",
+                        "required": true
+                    },
+                    {
+                        "name": "method",
+                        "type": "select",
+                        "label": "Method",
+                        "default": "GET",
+                        "required": true,
+                        "validate": {
+                            "enum": [
+                                "GET",
+                                "POST",
+                                "PUT",
+                                "PATCH",
+                                "DELETE"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "headers",
+                        "spec": [
+                            {
+                                "name": "key",
+                                "type": "text",
+                                "label": "Key"
+                            },
+                            {
+                                "name": "value",
+                                "type": "text",
+                                "label": "Value"
+                            }
+                        ],
+                        "type": "array",
+                        "label": "Headers",
+                        "default": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "qs",
+                        "spec": [
+                            {
+                                "name": "key",
+                                "type": "text",
+                                "label": "Key"
+                            },
+                            {
+                                "name": "value",
+                                "type": "text",
+                                "label": "Value"
+                            }
+                        ],
+                        "type": "array",
+                        "label": "Query String"
+                    },
+                    {
+                        "name": "body",
+                        "type": "any",
+                        "label": "Body"
+                    }
+                ]
+            },
+            "onerror": [
+                {
+                    "id": 47,
+                    "module": "builtin:Commit",
+                    "version": 1,
+                    "parameters": {},
+                    "mapper": {},
+                    "metadata": {
+                        "designer": {
+                            "x": 805,
+                            "y": 303
+                        },
+                        "restore": {}
+                    }
+                }
+            ]
+        },
+        {
+            "id": 19,
+            "module": "builtin:BasicRouter",
+            "version": 1,
+            "mapper": null,
+            "metadata": {
+                "designer": {
+                    "x": 1064,
+                    "y": 14
+                }
+            },
+            "routes": [
+                {
+                    "flow": [
+                        {
+                            "id": 2,
+                            "module": "airtable:ActionCreateRecord",
+                            "version": 3,
+                            "parameters": {
+                                "__IMTCONN__": 11487710
+                            },
+                            "filter": {
+                                "name": "New lead",
+                                "conditions": [
+                                    [
+                                        {
+                                            "a": "{{length(get(24.body; \"records\"))}}",
+                                            "b": "0",
+                                            "o": "number:equal"
+                                        },
+                                        {
+                                            "a": "{{get(4.answers.11bc304b; \"textAnswers.answers.1.value\")}}",
+                                            "o": "exist"
+                                        },
+                                        {
+                                            "a": "{{get(4.answers.6bc0bfb0; \"textAnswers.answers.1.value\")}}",
+                                            "o": "exist"
+                                        }
+                                    ]
+                                ]
+                            },
+                            "mapper": {
+                                "base": "app3kJfLdlgpL7AOK",
+                                "table": "tbloGe5mA3fPIOrE2",
+                                "record": {
+                                    "fld336PqhcmjgnQHC": "{{ifempty(parseNumber(replace(get(4.answers.`6bc0bfb0`; \"textAnswers.answers.1.value\"); \"/[^0-9.]/g\"; )); 0)}}",
+                                    "fldKwlK2swRKBj5nb": "{{formatDate(4.createTime; \"YYYY-MM-DDTHH:mm:ssZ\"; \"Asia/Kolkata\")}}",
+                                    "fldfLDd5aGPb8NYVS": "{{ifempty(get(4.answers.`29a0b389`; \"textAnswers.answers.1.value\"); \"Unknown\")}}",
+                                    "fldiXl7BBLHnN7kiO": "{{get(4.answers.`11bc304b`; \"textAnswers.answers.1.value\")}}",
+                                    "fldjf1ewPVAyTWUjE": "{{get(4.answers.`65218836`; \"textAnswers.answers.1.value\")}}",
+                                    "fldq43q7taE1zOHp3": "{{get(4.answers.`4201a29f`; \"textAnswers.answers.1.value\")}}",
+                                    "fldwJetCKCUGpfYtm": "New"
+                                },
+                                "typecast": false,
+                                "useColumnId": false
+                            },
+                            "metadata": {
+                                "designer": {
+                                    "x": 1470,
+                                    "y": 188
+                                },
+                                "setupValidation": {
+                                    "result": {
+                                        "valid": true,
+                                        "fields": []
+                                    },
+                                    "version": 1,
+                                    "configuration": "3e76e52cb9ec0349"
+                                },
+                                "restore": {
+                                    "expect": {
+                                        "base": {
+                                            "label": "Requests"
+                                        },
+                                        "table": {
+                                            "label": "Requests",
+                                            "nested": [
+                                                {
+                                                    "name": "record",
+                                                    "spec": [
+                                                        {
+                                                            "name": "fldq43q7taE1zOHp3",
+                                                            "type": "text",
+                                                            "label": "Name"
+                                                        },
+                                                        {
+                                                            "name": "fldiXl7BBLHnN7kiO",
+                                                            "type": "text",
+                                                            "label": "Email"
+                                                        },
+                                                        {
+                                                            "mode": "edit",
+                                                            "name": "fldfLDd5aGPb8NYVS",
+                                                            "type": "select",
+                                                            "label": "Service Needed",
+                                                            "dynamic": true,
+                                                            "options": [
+                                                                {
+                                                                    "label": "Web Design",
+                                                                    "value": "Web Design"
+                                                                },
+                                                                {
+                                                                    "label": "SEO",
+                                                                    "value": "SEO"
+                                                                },
+                                                                {
+                                                                    "label": "Consulting",
+                                                                    "value": "Consulting"
+                                                                }
+                                                            ],
+                                                            "validate": false
+                                                        },
+                                                        {
+                                                            "name": "fld336PqhcmjgnQHC",
+                                                            "type": "number",
+                                                            "label": "Budget"
+                                                        },
+                                                        {
+                                                            "mode": "edit",
+                                                            "name": "fldwJetCKCUGpfYtm",
+                                                            "type": "select",
+                                                            "label": "Status",
+                                                            "dynamic": true,
+                                                            "options": [
+                                                                {
+                                                                    "label": "New",
+                                                                    "value": "New"
+                                                                },
+                                                                {
+                                                                    "label": "Contacted",
+                                                                    "value": "Contacted"
+                                                                },
+                                                                {
+                                                                    "label": "Closed",
+                                                                    "value": "Closed"
+                                                                }
+                                                            ],
+                                                            "validate": false
+                                                        },
+                                                        {
+                                                            "name": "fldKwlK2swRKBj5nb",
+                                                            "time": true,
+                                                            "type": "date",
+                                                            "label": "Received At"
+                                                        },
+                                                        {
+                                                            "name": "fldQOccUbZw8KtXWx",
+                                                            "type": "text",
+                                                            "label": "Notes",
+                                                            "multiline": true
+                                                        },
+                                                        {
+                                                            "name": "fldjf1ewPVAyTWUjE",
+                                                            "type": "text",
+                                                            "label": "Phone"
+                                                        },
+                                                        {
+                                                            "mode": "edit",
+                                                            "name": "fld6iDuX8PfnpYbuO",
+                                                            "type": "select",
+                                                            "label": "Priority",
+                                                            "dynamic": true,
+                                                            "options": [
+                                                                {
+                                                                    "label": "High",
+                                                                    "value": "High"
+                                                                },
+                                                                {
+                                                                    "label": "Medium",
+                                                                    "value": "Medium"
+                                                                },
+                                                                {
+                                                                    "label": "Low",
+                                                                    "value": "Low"
+                                                                }
+                                                            ],
+                                                            "validate": false
+                                                        }
+                                                    ],
+                                                    "type": "collection",
+                                                    "label": "Record"
+                                                }
+                                            ]
+                                        },
+                                        "record": {
+                                            "nested": {
+                                                "fld6iDuX8PfnpYbuO": {
+                                                    "mode": "edit"
+                                                },
+                                                "fldfLDd5aGPb8NYVS": {
+                                                    "mode": "edit"
+                                                },
+                                                "fldwJetCKCUGpfYtm": {
+                                                    "mode": "chose",
+                                                    "label": "New"
+                                                }
+                                            }
+                                        },
+                                        "typecast": {
+                                            "mode": "chose"
+                                        },
+                                        "useColumnId": {
+                                            "mode": "chose"
+                                        }
+                                    },
+                                    "parameters": {
+                                        "__IMTCONN__": {
+                                            "data": {
+                                                "scoped": "true",
+                                                "connection": "airtable3"
+                                            },
+                                            "label": "Asad's Airtable Token or Key connection (User ID: usro3SFT73RZSg4TO)"
+                                        }
+                                    }
+                                },
+                                "parameters": [
+                                    {
+                                        "name": "__IMTCONN__",
+                                        "type": "account:airtable3,airtable2",
+                                        "label": "Connection",
+                                        "required": true
+                                    }
+                                ],
+                                "expect": [
+                                    {
+                                        "name": "base",
+                                        "type": "select",
+                                        "label": "Base",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "typecast",
+                                        "type": "boolean",
+                                        "label": "Smart links",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "useColumnId",
+                                        "type": "boolean",
+                                        "label": "Use Column ID",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "table",
+                                        "type": "select",
+                                        "label": "Table",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "record",
+                                        "spec": [
+                                            {
+                                                "name": "fldq43q7taE1zOHp3",
+                                                "type": "text",
+                                                "label": "Name"
+                                            },
+                                            {
+                                                "name": "fldiXl7BBLHnN7kiO",
+                                                "type": "text",
+                                                "label": "Email"
+                                            },
+                                            {
+                                                "mode": "edit",
+                                                "name": "fldfLDd5aGPb8NYVS",
+                                                "type": "select",
+                                                "label": "Service Needed"
+                                            },
+                                            {
+                                                "name": "fld336PqhcmjgnQHC",
+                                                "type": "number",
+                                                "label": "Budget"
+                                            },
+                                            {
+                                                "mode": "edit",
+                                                "name": "fldwJetCKCUGpfYtm",
+                                                "type": "select",
+                                                "label": "Status"
+                                            },
+                                            {
+                                                "name": "fldKwlK2swRKBj5nb",
+                                                "time": true,
+                                                "type": "date",
+                                                "label": "Received At"
+                                            },
+                                            {
+                                                "name": "fldQOccUbZw8KtXWx",
+                                                "type": "text",
+                                                "label": "Notes"
+                                            },
+                                            {
+                                                "name": "fldjf1ewPVAyTWUjE",
+                                                "type": "text",
+                                                "label": "Phone"
+                                            },
+                                            {
+                                                "mode": "edit",
+                                                "name": "fld6iDuX8PfnpYbuO",
+                                                "type": "select",
+                                                "label": "Priority"
+                                            }
+                                        ],
+                                        "type": "collection",
+                                        "label": "Record"
+                                    }
+                                ],
+                                "interface": [
+                                    {
+                                        "name": "id",
+                                        "type": "text",
+                                        "label": "ID"
+                                    },
+                                    {
+                                        "name": "createdTime",
+                                        "type": "date",
+                                        "label": "Created Time"
+                                    },
+                                    {
+                                        "name": "Name",
+                                        "type": "text",
+                                        "label": "Name"
+                                    },
+                                    {
+                                        "name": "Email",
+                                        "type": "text",
+                                        "label": "Email"
+                                    },
+                                    {
+                                        "name": "Service Needed",
+                                        "type": "text",
+                                        "label": "Service Needed"
+                                    },
+                                    {
+                                        "name": "Budget",
+                                        "type": "number",
+                                        "label": "Budget"
+                                    },
+                                    {
+                                        "name": "Status",
+                                        "type": "text",
+                                        "label": "Status"
+                                    },
+                                    {
+                                        "name": "Received At",
+                                        "time": true,
+                                        "type": "date",
+                                        "label": "Received At"
+                                    },
+                                    {
+                                        "name": "Notes",
+                                        "type": "text",
+                                        "label": "Notes",
+                                        "multiline": true
+                                    },
+                                    {
+                                        "name": "Phone",
+                                        "type": "text",
+                                        "label": "Phone"
+                                    },
+                                    {
+                                        "name": "Priority",
+                                        "type": "text",
+                                        "label": "Priority"
+                                    }
+                                ]
+                            },
+                            "onerror": [
+                                {
+                                    "id": 32,
+                                    "module": "builtin:BasicRouter",
+                                    "version": 1,
+                                    "filter": {
+                                        "name": "Error",
+                                        "conditions": []
+                                    },
+                                    "mapper": null,
+                                    "metadata": {
+                                        "designer": {
+                                            "x": 2118,
+                                            "y": 402
+                                        }
+                                    },
+                                    "routes": [
+                                        {
+                                            "flow": [
+                                                {
+                                                    "id": 34,
+                                                    "module": "slack:CreateMessage",
+                                                    "version": 4,
+                                                    "parameters": {
+                                                        "__IMTCONN__": 11488586
+                                                    },
+                                                    "mapper": {
+                                                        "text": "❌ Airtable write failed\nName: {{get(4.answers.`4201a29f`; \"textAnswers.answers.1.value\")}}\nError: {{2.error.message}}",
+                                                        "parse": false,
+                                                        "mrkdwn": true,
+                                                        "channel": "C0C5M1L6D5M",
+                                                        "channelType": "public",
+                                                        "channelWType": "list"
+                                                    },
+                                                    "metadata": {
+                                                        "designer": {
+                                                            "x": 2418,
+                                                            "y": 252
+                                                        },
+                                                        "setupValidation": {
+                                                            "result": {
+                                                                "valid": true,
+                                                                "fields": []
+                                                            },
+                                                            "version": 1,
+                                                            "configuration": "45ce3c7af4008ff8"
+                                                        },
+                                                        "restore": {
+                                                            "expect": {
+                                                                "parse": {
+                                                                    "mode": "chose"
+                                                                },
+                                                                "mrkdwn": {
+                                                                    "mode": "chose"
+                                                                },
+                                                                "channel": {
+                                                                    "mode": "chose",
+                                                                    "label": "new-leads"
+                                                                },
+                                                                "link_names": {
+                                                                    "mode": "chose"
+                                                                },
+                                                                "channelType": {
+                                                                    "label": "Public channel"
+                                                                },
+                                                                "channelWType": {
+                                                                    "label": "Select from the list"
+                                                                },
+                                                                "unfurl_links": {
+                                                                    "mode": "chose"
+                                                                },
+                                                                "unfurl_media": {
+                                                                    "mode": "chose"
+                                                                },
+                                                                "reply_broadcast": {
+                                                                    "mode": "chose"
+                                                                }
+                                                            },
+                                                            "parameters": {
+                                                                "__IMTCONN__": {
+                                                                    "data": {
+                                                                        "scoped": "true",
+                                                                        "connection": "slack2"
+                                                                    },
+                                                                    "label": "Asad's Slack (user) connection (execioautomations.slack.com - execioautomations)"
+                                                                }
+                                                            }
+                                                        },
+                                                        "parameters": [
+                                                            {
+                                                                "name": "__IMTCONN__",
+                                                                "type": "account:slack2,slack3",
+                                                                "label": "Connection",
+                                                                "required": true
+                                                            }
+                                                        ],
+                                                        "expect": [
+                                                            {
+                                                                "name": "channelWType",
+                                                                "type": "select",
+                                                                "label": "Enter a channel ID or name",
+                                                                "required": true,
+                                                                "validate": {
+                                                                    "enum": [
+                                                                        "manualy",
+                                                                        "list"
+                                                                    ]
+                                                                }
+                                                            },
+                                                            {
+                                                                "name": "text",
+                                                                "type": "text",
+                                                                "label": "Text"
+                                                            },
+                                                            {
+                                                                "name": "blocks",
+                                                                "type": "text",
+                                                                "label": "Blocks"
+                                                            },
+                                                            {
+                                                                "name": "thread_ts",
+                                                                "type": "text",
+                                                                "label": "Thread message ID (time stamp)"
+                                                            },
+                                                            {
+                                                                "name": "reply_broadcast",
+                                                                "type": "boolean",
+                                                                "label": "Reply broadcast"
+                                                            },
+                                                            {
+                                                                "name": "link_names",
+                                                                "type": "boolean",
+                                                                "label": "Link names"
+                                                            },
+                                                            {
+                                                                "name": "parse",
+                                                                "type": "boolean",
+                                                                "label": "Parse message text"
+                                                            },
+                                                            {
+                                                                "name": "mrkdwn",
+                                                                "type": "boolean",
+                                                                "label": "Use markdown"
+                                                            },
+                                                            {
+                                                                "name": "unfurl_links",
+                                                                "type": "boolean",
+                                                                "label": "Unfurl primarily text-based content"
+                                                            },
+                                                            {
+                                                                "name": "unfurl_media",
+                                                                "type": "boolean",
+                                                                "label": "Unfurl media content"
+                                                            },
+                                                            {
+                                                                "name": "icon_emoji",
+                                                                "type": "text",
+                                                                "label": "Icon emoji"
+                                                            },
+                                                            {
+                                                                "name": "icon_url",
+                                                                "type": "url",
+                                                                "label": "Icon url"
+                                                            },
+                                                            {
+                                                                "name": "username",
+                                                                "type": "text",
+                                                                "label": "User name"
+                                                            },
+                                                            {
+                                                                "name": "channelType",
+                                                                "type": "select",
+                                                                "label": "Channel type",
+                                                                "required": true,
+                                                                "validate": {
+                                                                    "enum": [
+                                                                        "public",
+                                                                        "private",
+                                                                        "im",
+                                                                        "mpim"
+                                                                    ]
+                                                                }
+                                                            },
+                                                            {
+                                                                "name": "channel",
+                                                                "type": "select",
+                                                                "label": "Public channel",
+                                                                "required": true
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "flow": [
+                                                {
+                                                    "id": 45,
+                                                    "module": "builtin:Ignore",
+                                                    "version": 1,
+                                                    "parameters": {},
+                                                    "mapper": {},
+                                                    "metadata": {
+                                                        "designer": {
+                                                            "x": 2418,
+                                                            "y": 552
+                                                        },
+                                                        "restore": {}
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": 12,
+                            "module": "slack:CreateMessage",
+                            "version": 4,
+                            "parameters": {
+                                "__IMTCONN__": 11488586
+                            },
+                            "filter": {
+                                "name": "Big Jobs",
+                                "conditions": [
+                                    [
+                                        {
+                                            "a": "{{ifempty(parseNumber(replace(get(4.answers.`6bc0bfb0`; \"textAnswers.answers.1.value\"); \"/[^0-9.]/g\"; )); 0)}}",
+                                            "b": "5000",
+                                            "o": "number:greaterorequal"
+                                        }
+                                    ]
+                                ]
+                            },
+                            "mapper": {
+                                "text": "🔥 New high-value lead\nName: {{get(4.answers.`4201a29f`; \"textAnswers.answers.1.value\")}}\nService: {{get(4.answers.`29a0b389`; \"textAnswers.answers.1.value\")}}\nBudget: {{get(4.answers.`6bc0bfb0`; \"textAnswers.answers.1.value\")}}\nMohammed — please call today.",
+                                "parse": false,
+                                "mrkdwn": true,
+                                "channel": "C0C5M1L6D5M",
+                                "channelType": "public",
+                                "channelWType": "list"
+                            },
+                            "metadata": {
+                                "designer": {
+                                    "x": 2219,
+                                    "y": 137
+                                },
+                                "setupValidation": {
+                                    "result": {
+                                        "valid": true,
+                                        "fields": []
+                                    },
+                                    "version": 1,
+                                    "configuration": "ea726ae95e337a53"
+                                },
+                                "restore": {
+                                    "expect": {
+                                        "parse": {
+                                            "mode": "chose"
+                                        },
+                                        "mrkdwn": {
+                                            "mode": "chose"
+                                        },
+                                        "channel": {
+                                            "mode": "chose",
+                                            "label": "new-leads"
+                                        },
+                                        "link_names": {
+                                            "mode": "chose"
+                                        },
+                                        "channelType": {
+                                            "label": "Public channel"
+                                        },
+                                        "channelWType": {
+                                            "label": "Select from the list"
+                                        },
+                                        "unfurl_links": {
+                                            "mode": "chose"
+                                        },
+                                        "unfurl_media": {
+                                            "mode": "chose"
+                                        },
+                                        "reply_broadcast": {
+                                            "mode": "chose"
+                                        }
+                                    },
+                                    "parameters": {
+                                        "__IMTCONN__": {
+                                            "data": {
+                                                "scoped": "true",
+                                                "connection": "slack2"
+                                            },
+                                            "label": "Asad's Slack (user) connection (execioautomations.slack.com - execioautomations)"
+                                        }
+                                    }
+                                },
+                                "parameters": [
+                                    {
+                                        "name": "__IMTCONN__",
+                                        "type": "account:slack2,slack3",
+                                        "label": "Connection",
+                                        "required": true
+                                    }
+                                ],
+                                "expect": [
+                                    {
+                                        "name": "channelWType",
+                                        "type": "select",
+                                        "label": "Enter a channel ID or name",
+                                        "required": true,
+                                        "validate": {
+                                            "enum": [
+                                                "manualy",
+                                                "list"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "name": "text",
+                                        "type": "text",
+                                        "label": "Text"
+                                    },
+                                    {
+                                        "name": "blocks",
+                                        "type": "text",
+                                        "label": "Blocks"
+                                    },
+                                    {
+                                        "name": "thread_ts",
+                                        "type": "text",
+                                        "label": "Thread message ID (time stamp)"
+                                    },
+                                    {
+                                        "name": "reply_broadcast",
+                                        "type": "boolean",
+                                        "label": "Reply broadcast"
+                                    },
+                                    {
+                                        "name": "link_names",
+                                        "type": "boolean",
+                                        "label": "Link names"
+                                    },
+                                    {
+                                        "name": "parse",
+                                        "type": "boolean",
+                                        "label": "Parse message text"
+                                    },
+                                    {
+                                        "name": "mrkdwn",
+                                        "type": "boolean",
+                                        "label": "Use markdown"
+                                    },
+                                    {
+                                        "name": "unfurl_links",
+                                        "type": "boolean",
+                                        "label": "Unfurl primarily text-based content"
+                                    },
+                                    {
+                                        "name": "unfurl_media",
+                                        "type": "boolean",
+                                        "label": "Unfurl media content"
+                                    },
+                                    {
+                                        "name": "icon_emoji",
+                                        "type": "text",
+                                        "label": "Icon emoji"
+                                    },
+                                    {
+                                        "name": "icon_url",
+                                        "type": "url",
+                                        "label": "Icon url"
+                                    },
+                                    {
+                                        "name": "username",
+                                        "type": "text",
+                                        "label": "User name"
+                                    },
+                                    {
+                                        "name": "channelType",
+                                        "type": "select",
+                                        "label": "Channel type",
+                                        "required": true,
+                                        "validate": {
+                                            "enum": [
+                                                "public",
+                                                "private",
+                                                "im",
+                                                "mpim"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "name": "channel",
+                                        "type": "select",
+                                        "label": "Public channel",
+                                        "required": true
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "flow": [
+                        {
+                            "id": 21,
+                            "module": "airtable:ActionUpdateRecords",
+                            "version": 3,
+                            "parameters": {
+                                "__IMTCONN__": 11487710
+                            },
+                            "filter": {
+                                "name": "Existing lead",
+                                "conditions": [
+                                    [
+                                        {
+                                            "a": "{{get(24.body; \"records.1.id\")}}",
+                                            "o": "exist"
+                                        },
+                                        {
+                                            "a": "{{get(4.answers.11bc304b; \"textAnswers.answers.1.value\")}}",
+                                            "o": "exist"
+                                        },
+                                        {
+                                            "a": "{{get(4.answers.6bc0bfb0; \"textAnswers.answers.1.value\")}}",
+                                            "o": "exist"
+                                        }
+                                    ]
+                                ]
+                            },
+                            "mapper": {
+                                "id": "{{get(24.body; \"records.1.id\")}}",
+                                "base": "app3kJfLdlgpL7AOK",
+                                "table": "tbloGe5mA3fPIOrE2",
+                                "record": {
+                                    "fldQOccUbZw8KtXWx": "{{get(24.body; \"records.1.fields.Notes\")}}\nService: {{get(4.answers.`29a0b389`; \"textAnswers.answers.1.value\")}}\nBudget: {{get(4.answers.`6bc0bfb0`; \"textAnswers.answers.1.value\")}}",
+                                    "fldiXl7BBLHnN7kiO": "{{get(4.answers.`11bc304b`; \"textAnswers.answers.1.value\")}}",
+                                    "fldq43q7taE1zOHp3": "{{get(4.answers.`4201a29f`; \"textAnswers.answers.1.value\")}}"
+                                },
+                                "typecast": false,
+                                "useColumnId": false
+                            },
+                            "metadata": {
+                                "designer": {
+                                    "x": 1474,
+                                    "y": 678
+                                },
+                                "setupValidation": {
+                                    "result": {
+                                        "valid": true,
+                                        "fields": []
+                                    },
+                                    "version": 1,
+                                    "configuration": "6f2999ecf3066bee"
+                                },
+                                "restore": {
+                                    "expect": {
+                                        "base": {
+                                            "label": "Requests"
+                                        },
+                                        "table": {
+                                            "label": "Requests"
+                                        },
+                                        "record": {
+                                            "nested": {
+                                                "fld6iDuX8PfnpYbuO": {
+                                                    "mode": "edit"
+                                                },
+                                                "fldfLDd5aGPb8NYVS": {
+                                                    "mode": "edit"
+                                                },
+                                                "fldwJetCKCUGpfYtm": {
+                                                    "mode": "edit"
+                                                }
+                                            }
+                                        },
+                                        "typecast": {
+                                            "mode": "chose"
+                                        },
+                                        "useColumnId": {
+                                            "mode": "chose"
+                                        }
+                                    },
+                                    "parameters": {
+                                        "__IMTCONN__": {
+                                            "data": {
+                                                "scoped": "true",
+                                                "connection": "airtable3"
+                                            },
+                                            "label": "Asad's Airtable Token or Key connection (User ID: usro3SFT73RZSg4TO)"
+                                        }
+                                    }
+                                },
+                                "parameters": [
+                                    {
+                                        "name": "__IMTCONN__",
+                                        "type": "account:airtable3,airtable2",
+                                        "label": "Connection",
+                                        "required": true
+                                    }
+                                ],
+                                "expect": [
+                                    {
+                                        "name": "base",
+                                        "type": "select",
+                                        "label": "Base",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "typecast",
+                                        "type": "boolean",
+                                        "label": "Smart links",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "useColumnId",
+                                        "type": "boolean",
+                                        "label": "Use Column ID",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "table",
+                                        "type": "select",
+                                        "label": "Table",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "id",
+                                        "type": "text",
+                                        "label": "Record ID",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "record",
+                                        "spec": [
+                                            {
+                                                "name": "fldq43q7taE1zOHp3",
+                                                "type": "text",
+                                                "label": "Name"
+                                            },
+                                            {
+                                                "name": "fldiXl7BBLHnN7kiO",
+                                                "type": "text",
+                                                "label": "Email"
+                                            },
+                                            {
+                                                "mode": "edit",
+                                                "name": "fldfLDd5aGPb8NYVS",
+                                                "type": "select",
+                                                "label": "Service Needed"
+                                            },
+                                            {
+                                                "name": "fld336PqhcmjgnQHC",
+                                                "type": "number",
+                                                "label": "Budget"
+                                            },
+                                            {
+                                                "mode": "edit",
+                                                "name": "fldwJetCKCUGpfYtm",
+                                                "type": "select",
+                                                "label": "Status"
+                                            },
+                                            {
+                                                "name": "fldKwlK2swRKBj5nb",
+                                                "time": true,
+                                                "type": "date",
+                                                "label": "Received At"
+                                            },
+                                            {
+                                                "name": "fldQOccUbZw8KtXWx",
+                                                "type": "text",
+                                                "label": "Notes"
+                                            },
+                                            {
+                                                "name": "fldjf1ewPVAyTWUjE",
+                                                "type": "text",
+                                                "label": "Phone"
+                                            },
+                                            {
+                                                "mode": "edit",
+                                                "name": "fld6iDuX8PfnpYbuO",
+                                                "type": "select",
+                                                "label": "Priority"
+                                            }
+                                        ],
+                                        "type": "collection",
+                                        "label": "Record"
+                                    }
+                                ],
+                                "interface": [
+                                    {
+                                        "name": "id",
+                                        "type": "text",
+                                        "label": "ID"
+                                    },
+                                    {
+                                        "name": "createdTime",
+                                        "type": "date",
+                                        "label": "Created Time"
+                                    },
+                                    {
+                                        "name": "Name",
+                                        "type": "text",
+                                        "label": "Name"
+                                    },
+                                    {
+                                        "name": "Email",
+                                        "type": "text",
+                                        "label": "Email"
+                                    },
+                                    {
+                                        "name": "Service Needed",
+                                        "type": "text",
+                                        "label": "Service Needed"
+                                    },
+                                    {
+                                        "name": "Budget",
+                                        "type": "number",
+                                        "label": "Budget"
+                                    },
+                                    {
+                                        "name": "Status",
+                                        "type": "text",
+                                        "label": "Status"
+                                    },
+                                    {
+                                        "name": "Received At",
+                                        "time": true,
+                                        "type": "date",
+                                        "label": "Received At"
+                                    },
+                                    {
+                                        "name": "Notes",
+                                        "type": "text",
+                                        "label": "Notes",
+                                        "multiline": true
+                                    },
+                                    {
+                                        "name": "Phone",
+                                        "type": "text",
+                                        "label": "Phone"
+                                    },
+                                    {
+                                        "name": "Priority",
+                                        "type": "text",
+                                        "label": "Priority"
+                                    }
+                                ]
+                            },
+                            "onerror": [
+                                {
+                                    "id": 36,
+                                    "module": "builtin:BasicRouter",
+                                    "version": 1,
+                                    "mapper": null,
+                                    "metadata": {
+                                        "designer": {
+                                            "x": 1676,
+                                            "y": 1729
+                                        }
+                                    },
+                                    "routes": [
+                                        {
+                                            "flow": [
+                                                {
+                                                    "id": 37,
+                                                    "module": "slack:CreateMessage",
+                                                    "version": 4,
+                                                    "parameters": {
+                                                        "__IMTCONN__": 11488586
+                                                    },
+                                                    "mapper": {
+                                                        "text": "{{21.error.message}}",
+                                                        "parse": false,
+                                                        "mrkdwn": true,
+                                                        "channel": "C0C5M1L6D5M",
+                                                        "channelType": "public",
+                                                        "channelWType": "list"
+                                                    },
+                                                    "metadata": {
+                                                        "designer": {
+                                                            "x": 2246,
+                                                            "y": 1739
+                                                        },
+                                                        "setupValidation": {
+                                                            "result": {
+                                                                "valid": true,
+                                                                "fields": []
+                                                            },
+                                                            "version": 1,
+                                                            "configuration": "518217e00bb4e89"
+                                                        },
+                                                        "restore": {
+                                                            "expect": {
+                                                                "parse": {
+                                                                    "mode": "chose"
+                                                                },
+                                                                "mrkdwn": {
+                                                                    "mode": "chose"
+                                                                },
+                                                                "channel": {
+                                                                    "mode": "chose",
+                                                                    "label": "new-leads"
+                                                                },
+                                                                "link_names": {
+                                                                    "mode": "chose"
+                                                                },
+                                                                "channelType": {
+                                                                    "label": "Public channel"
+                                                                },
+                                                                "channelWType": {
+                                                                    "label": "Select from the list"
+                                                                },
+                                                                "unfurl_links": {
+                                                                    "mode": "chose"
+                                                                },
+                                                                "unfurl_media": {
+                                                                    "mode": "chose"
+                                                                },
+                                                                "reply_broadcast": {
+                                                                    "mode": "chose"
+                                                                }
+                                                            },
+                                                            "parameters": {
+                                                                "__IMTCONN__": {
+                                                                    "data": {
+                                                                        "scoped": "true",
+                                                                        "connection": "slack2"
+                                                                    },
+                                                                    "label": "Asad's Slack (user) connection (execioautomations.slack.com - execioautomations)"
+                                                                }
+                                                            }
+                                                        },
+                                                        "parameters": [
+                                                            {
+                                                                "name": "__IMTCONN__",
+                                                                "type": "account:slack2,slack3",
+                                                                "label": "Connection",
+                                                                "required": true
+                                                            }
+                                                        ],
+                                                        "expect": [
+                                                            {
+                                                                "name": "channelWType",
+                                                                "type": "select",
+                                                                "label": "Enter a channel ID or name",
+                                                                "required": true,
+                                                                "validate": {
+                                                                    "enum": [
+                                                                        "manualy",
+                                                                        "list"
+                                                                    ]
+                                                                }
+                                                            },
+                                                            {
+                                                                "name": "text",
+                                                                "type": "text",
+                                                                "label": "Text"
+                                                            },
+                                                            {
+                                                                "name": "blocks",
+                                                                "type": "text",
+                                                                "label": "Blocks"
+                                                            },
+                                                            {
+                                                                "name": "thread_ts",
+                                                                "type": "text",
+                                                                "label": "Thread message ID (time stamp)"
+                                                            },
+                                                            {
+                                                                "name": "reply_broadcast",
+                                                                "type": "boolean",
+                                                                "label": "Reply broadcast"
+                                                            },
+                                                            {
+                                                                "name": "link_names",
+                                                                "type": "boolean",
+                                                                "label": "Link names"
+                                                            },
+                                                            {
+                                                                "name": "parse",
+                                                                "type": "boolean",
+                                                                "label": "Parse message text"
+                                                            },
+                                                            {
+                                                                "name": "mrkdwn",
+                                                                "type": "boolean",
+                                                                "label": "Use markdown"
+                                                            },
+                                                            {
+                                                                "name": "unfurl_links",
+                                                                "type": "boolean",
+                                                                "label": "Unfurl primarily text-based content"
+                                                            },
+                                                            {
+                                                                "name": "unfurl_media",
+                                                                "type": "boolean",
+                                                                "label": "Unfurl media content"
+                                                            },
+                                                            {
+                                                                "name": "icon_emoji",
+                                                                "type": "text",
+                                                                "label": "Icon emoji"
+                                                            },
+                                                            {
+                                                                "name": "icon_url",
+                                                                "type": "url",
+                                                                "label": "Icon url"
+                                                            },
+                                                            {
+                                                                "name": "username",
+                                                                "type": "text",
+                                                                "label": "User name"
+                                                            },
+                                                            {
+                                                                "name": "channelType",
+                                                                "type": "select",
+                                                                "label": "Channel type",
+                                                                "required": true,
+                                                                "validate": {
+                                                                    "enum": [
+                                                                        "public",
+                                                                        "private",
+                                                                        "im",
+                                                                        "mpim"
+                                                                    ]
+                                                                }
+                                                            },
+                                                            {
+                                                                "name": "channel",
+                                                                "type": "select",
+                                                                "label": "Public channel",
+                                                                "required": true
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "flow": [
+                                                {
+                                                    "id": 38,
+                                                    "module": "builtin:Ignore",
+                                                    "version": 1,
+                                                    "parameters": {},
+                                                    "mapper": {},
+                                                    "metadata": {
+                                                        "designer": {
+                                                            "x": 2218,
+                                                            "y": 2075
+                                                        },
+                                                        "restore": {}
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": 22,
+                            "module": "slack:CreateMessage",
+                            "version": 4,
+                            "parameters": {
+                                "__IMTCONN__": 11488586
+                            },
+                            "mapper": {
+                                "text": "🔁 Repeat enquiry — existing record updated\r\nName: {{get(4.answers.`4201a29f`; \"textAnswers.answers.1.value\")}}\r\nService: {{get(4.answers.`29a0b389`; \"textAnswers.answers.1.value\")}}\r\nBudget: {{get(4.answers.`6bc0bfb0`; \"textAnswers.answers.1.value\")}}",
+                                "parse": false,
+                                "mrkdwn": true,
+                                "channel": "C0C5M1L6D5M",
+                                "channelType": "public",
+                                "channelWType": "list"
+                            },
+                            "metadata": {
+                                "designer": {
+                                    "x": 1996,
+                                    "y": 1357
+                                },
+                                "setupValidation": {
+                                    "result": {
+                                        "valid": true,
+                                        "fields": []
+                                    },
+                                    "version": 1,
+                                    "configuration": "58d8b294b780166f"
+                                },
+                                "restore": {
+                                    "expect": {
+                                        "parse": {
+                                            "mode": "chose"
+                                        },
+                                        "mrkdwn": {
+                                            "mode": "chose"
+                                        },
+                                        "channel": {
+                                            "mode": "chose",
+                                            "label": "new-leads"
+                                        },
+                                        "link_names": {
+                                            "mode": "chose"
+                                        },
+                                        "channelType": {
+                                            "label": "Public channel"
+                                        },
+                                        "channelWType": {
+                                            "label": "Select from the list"
+                                        },
+                                        "unfurl_links": {
+                                            "mode": "chose"
+                                        },
+                                        "unfurl_media": {
+                                            "mode": "chose"
+                                        },
+                                        "reply_broadcast": {
+                                            "mode": "chose"
+                                        }
+                                    },
+                                    "parameters": {
+                                        "__IMTCONN__": {
+                                            "data": {
+                                                "scoped": "true",
+                                                "connection": "slack2"
+                                            },
+                                            "label": "Asad's Slack (user) connection (execioautomations.slack.com - execioautomations)"
+                                        }
+                                    }
+                                },
+                                "parameters": [
+                                    {
+                                        "name": "__IMTCONN__",
+                                        "type": "account:slack2,slack3",
+                                        "label": "Connection",
+                                        "required": true
+                                    }
+                                ],
+                                "expect": [
+                                    {
+                                        "name": "channelWType",
+                                        "type": "select",
+                                        "label": "Enter a channel ID or name",
+                                        "required": true,
+                                        "validate": {
+                                            "enum": [
+                                                "manualy",
+                                                "list"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "name": "text",
+                                        "type": "text",
+                                        "label": "Text"
+                                    },
+                                    {
+                                        "name": "blocks",
+                                        "type": "text",
+                                        "label": "Blocks"
+                                    },
+                                    {
+                                        "name": "thread_ts",
+                                        "type": "text",
+                                        "label": "Thread message ID (time stamp)"
+                                    },
+                                    {
+                                        "name": "reply_broadcast",
+                                        "type": "boolean",
+                                        "label": "Reply broadcast"
+                                    },
+                                    {
+                                        "name": "link_names",
+                                        "type": "boolean",
+                                        "label": "Link names"
+                                    },
+                                    {
+                                        "name": "parse",
+                                        "type": "boolean",
+                                        "label": "Parse message text"
+                                    },
+                                    {
+                                        "name": "mrkdwn",
+                                        "type": "boolean",
+                                        "label": "Use markdown"
+                                    },
+                                    {
+                                        "name": "unfurl_links",
+                                        "type": "boolean",
+                                        "label": "Unfurl primarily text-based content"
+                                    },
+                                    {
+                                        "name": "unfurl_media",
+                                        "type": "boolean",
+                                        "label": "Unfurl media content"
+                                    },
+                                    {
+                                        "name": "icon_emoji",
+                                        "type": "text",
+                                        "label": "Icon emoji"
+                                    },
+                                    {
+                                        "name": "icon_url",
+                                        "type": "url",
+                                        "label": "Icon url"
+                                    },
+                                    {
+                                        "name": "username",
+                                        "type": "text",
+                                        "label": "User name"
+                                    },
+                                    {
+                                        "name": "channelType",
+                                        "type": "select",
+                                        "label": "Channel type",
+                                        "required": true,
+                                        "validate": {
+                                            "enum": [
+                                                "public",
+                                                "private",
+                                                "im",
+                                                "mpim"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "name": "channel",
+                                        "type": "select",
+                                        "label": "Public channel",
+                                        "required": true
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "flow": [
+                        {
+                            "id": 26,
+                            "module": "airtable:ActionCreateRecord",
+                            "version": 3,
+                            "parameters": {
+                                "__IMTCONN__": 11487710
+                            },
+                            "filter": {
+                                "name": "Incomplete",
+                                "conditions": [
+                                    [
+                                        {
+                                            "a": "{{get(4.answers.11bc304b; \"textAnswers.answers.1.value\")}}",
+                                            "o": "notexist"
+                                        }
+                                    ],
+                                    [
+                                        {
+                                            "a": "{{get(4.answers.6bc0bfb0; \"textAnswers.answers.1.value\")}}",
+                                            "o": "notexist"
+                                        }
+                                    ]
+                                ]
+                            },
+                            "mapper": {
+                                "base": "app3kJfLdlgpL7AOK",
+                                "table": "tbloGe5mA3fPIOrE2",
+                                "record": {
+                                    "fldfLDd5aGPb8NYVS": "{{ifempty(get(4.answers.`29a0b389`; \"textAnswers.answers.1.value\"); \"Unknown\")}}",
+                                    "fldiXl7BBLHnN7kiO": "{{get(4.answers.`11bc304b`; \"textAnswers.answers.1.value\")}}",
+                                    "fldq43q7taE1zOHp3": "{{get(4.answers.`4201a29f`; \"textAnswers.answers.1.value\")}}",
+                                    "fldwJetCKCUGpfYtm": "Needs Review"
+                                },
+                                "typecast": false,
+                                "useColumnId": false
+                            },
+                            "metadata": {
+                                "designer": {
+                                    "x": 1453,
+                                    "y": -348
+                                },
+                                "setupValidation": {
+                                    "result": {
+                                        "valid": true,
+                                        "fields": []
+                                    },
+                                    "version": 1,
+                                    "configuration": "b2a4da42dd06bb41"
+                                },
+                                "restore": {
+                                    "expect": {
+                                        "base": {
+                                            "label": "Requests"
+                                        },
+                                        "table": {
+                                            "label": "Requests",
+                                            "nested": [
+                                                {
+                                                    "name": "record",
+                                                    "spec": [
+                                                        {
+                                                            "name": "fldq43q7taE1zOHp3",
+                                                            "type": "text",
+                                                            "label": "Name"
+                                                        },
+                                                        {
+                                                            "name": "fldiXl7BBLHnN7kiO",
+                                                            "type": "text",
+                                                            "label": "Email"
+                                                        },
+                                                        {
+                                                            "mode": "edit",
+                                                            "name": "fldfLDd5aGPb8NYVS",
+                                                            "type": "select",
+                                                            "label": "Service Needed",
+                                                            "dynamic": true,
+                                                            "options": [
+                                                                {
+                                                                    "label": "Web Design",
+                                                                    "value": "Web Design"
+                                                                },
+                                                                {
+                                                                    "label": "SEO",
+                                                                    "value": "SEO"
+                                                                },
+                                                                {
+                                                                    "label": "Consulting",
+                                                                    "value": "Consulting"
+                                                                }
+                                                            ],
+                                                            "validate": false
+                                                        },
+                                                        {
+                                                            "name": "fld336PqhcmjgnQHC",
+                                                            "type": "number",
+                                                            "label": "Budget"
+                                                        },
+                                                        {
+                                                            "mode": "edit",
+                                                            "name": "fldwJetCKCUGpfYtm",
+                                                            "type": "select",
+                                                            "label": "Status",
+                                                            "dynamic": true,
+                                                            "options": [
+                                                                {
+                                                                    "label": "New",
+                                                                    "value": "New"
+                                                                },
+                                                                {
+                                                                    "label": "Contacted",
+                                                                    "value": "Contacted"
+                                                                },
+                                                                {
+                                                                    "label": "Closed",
+                                                                    "value": "Closed"
+                                                                }
+                                                            ],
+                                                            "validate": false
+                                                        },
+                                                        {
+                                                            "name": "fldKwlK2swRKBj5nb",
+                                                            "time": true,
+                                                            "type": "date",
+                                                            "label": "Received At"
+                                                        },
+                                                        {
+                                                            "name": "fldQOccUbZw8KtXWx",
+                                                            "type": "text",
+                                                            "label": "Notes",
+                                                            "multiline": true
+                                                        },
+                                                        {
+                                                            "name": "fldjf1ewPVAyTWUjE",
+                                                            "type": "text",
+                                                            "label": "Phone"
+                                                        },
+                                                        {
+                                                            "mode": "edit",
+                                                            "name": "fld6iDuX8PfnpYbuO",
+                                                            "type": "select",
+                                                            "label": "Priority",
+                                                            "dynamic": true,
+                                                            "options": [
+                                                                {
+                                                                    "label": "High",
+                                                                    "value": "High"
+                                                                },
+                                                                {
+                                                                    "label": "Medium",
+                                                                    "value": "Medium"
+                                                                },
+                                                                {
+                                                                    "label": "Low",
+                                                                    "value": "Low"
+                                                                }
+                                                            ],
+                                                            "validate": false
+                                                        }
+                                                    ],
+                                                    "type": "collection",
+                                                    "label": "Record"
+                                                }
+                                            ]
+                                        },
+                                        "record": {
+                                            "nested": {
+                                                "fld6iDuX8PfnpYbuO": {
+                                                    "mode": "edit"
+                                                },
+                                                "fldfLDd5aGPb8NYVS": {
+                                                    "mode": "edit"
+                                                },
+                                                "fldwJetCKCUGpfYtm": {
+                                                    "mode": "edit"
+                                                }
+                                            }
+                                        },
+                                        "typecast": {
+                                            "mode": "chose"
+                                        },
+                                        "useColumnId": {
+                                            "mode": "chose"
+                                        }
+                                    },
+                                    "parameters": {
+                                        "__IMTCONN__": {
+                                            "data": {
+                                                "scoped": "true",
+                                                "connection": "airtable3"
+                                            },
+                                            "label": "Asad's Airtable Token or Key connection (User ID: usro3SFT73RZSg4TO)"
+                                        }
+                                    }
+                                },
+                                "parameters": [
+                                    {
+                                        "name": "__IMTCONN__",
+                                        "type": "account:airtable3,airtable2",
+                                        "label": "Connection",
+                                        "required": true
+                                    }
+                                ],
+                                "expect": [
+                                    {
+                                        "name": "base",
+                                        "type": "select",
+                                        "label": "Base",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "typecast",
+                                        "type": "boolean",
+                                        "label": "Smart links",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "useColumnId",
+                                        "type": "boolean",
+                                        "label": "Use Column ID",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "table",
+                                        "type": "select",
+                                        "label": "Table",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "record",
+                                        "spec": [
+                                            {
+                                                "name": "fldq43q7taE1zOHp3",
+                                                "type": "text",
+                                                "label": "Name"
+                                            },
+                                            {
+                                                "name": "fldiXl7BBLHnN7kiO",
+                                                "type": "text",
+                                                "label": "Email"
+                                            },
+                                            {
+                                                "mode": "edit",
+                                                "name": "fldfLDd5aGPb8NYVS",
+                                                "type": "select",
+                                                "label": "Service Needed"
+                                            },
+                                            {
+                                                "name": "fld336PqhcmjgnQHC",
+                                                "type": "number",
+                                                "label": "Budget"
+                                            },
+                                            {
+                                                "mode": "edit",
+                                                "name": "fldwJetCKCUGpfYtm",
+                                                "type": "select",
+                                                "label": "Status"
+                                            },
+                                            {
+                                                "name": "fldKwlK2swRKBj5nb",
+                                                "time": true,
+                                                "type": "date",
+                                                "label": "Received At"
+                                            },
+                                            {
+                                                "name": "fldQOccUbZw8KtXWx",
+                                                "type": "text",
+                                                "label": "Notes"
+                                            },
+                                            {
+                                                "name": "fldjf1ewPVAyTWUjE",
+                                                "type": "text",
+                                                "label": "Phone"
+                                            },
+                                            {
+                                                "mode": "edit",
+                                                "name": "fld6iDuX8PfnpYbuO",
+                                                "type": "select",
+                                                "label": "Priority"
+                                            }
+                                        ],
+                                        "type": "collection",
+                                        "label": "Record"
+                                    }
+                                ],
+                                "interface": [
+                                    {
+                                        "name": "id",
+                                        "type": "text",
+                                        "label": "ID"
+                                    },
+                                    {
+                                        "name": "createdTime",
+                                        "type": "date",
+                                        "label": "Created Time"
+                                    },
+                                    {
+                                        "name": "Name",
+                                        "type": "text",
+                                        "label": "Name"
+                                    },
+                                    {
+                                        "name": "Email",
+                                        "type": "text",
+                                        "label": "Email"
+                                    },
+                                    {
+                                        "name": "Service Needed",
+                                        "type": "text",
+                                        "label": "Service Needed"
+                                    },
+                                    {
+                                        "name": "Budget",
+                                        "type": "number",
+                                        "label": "Budget"
+                                    },
+                                    {
+                                        "name": "Status",
+                                        "type": "text",
+                                        "label": "Status"
+                                    },
+                                    {
+                                        "name": "Received At",
+                                        "time": true,
+                                        "type": "date",
+                                        "label": "Received At"
+                                    },
+                                    {
+                                        "name": "Notes",
+                                        "type": "text",
+                                        "label": "Notes",
+                                        "multiline": true
+                                    },
+                                    {
+                                        "name": "Phone",
+                                        "type": "text",
+                                        "label": "Phone"
+                                    },
+                                    {
+                                        "name": "Priority",
+                                        "type": "text",
+                                        "label": "Priority"
+                                    }
+                                ]
+                            },
+                            "onerror": [
+                                {
+                                    "id": 42,
+                                    "module": "builtin:BasicRouter",
+                                    "version": 1,
+                                    "mapper": null,
+                                    "metadata": {
+                                        "designer": {
+                                            "x": 2246,
+                                            "y": -185
+                                        }
+                                    },
+                                    "routes": [
+                                        {
+                                            "flow": [
+                                                {
+                                                    "id": 43,
+                                                    "module": "builtin:Ignore",
+                                                    "version": 1,
+                                                    "parameters": {},
+                                                    "mapper": {},
+                                                    "metadata": {
+                                                        "designer": {
+                                                            "x": 2060,
+                                                            "y": -458
+                                                        },
+                                                        "restore": {}
+                                                    }
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "flow": [
+                                                {
+                                                    "id": 44,
+                                                    "module": "slack:CreateMessage",
+                                                    "version": 4,
+                                                    "parameters": {
+                                                        "__IMTCONN__": 11488586
+                                                    },
+                                                    "mapper": {
+                                                        "text": "{{26.error.message}}",
+                                                        "parse": false,
+                                                        "mrkdwn": true,
+                                                        "channel": "C0C5M1L6D5M",
+                                                        "channelType": "public",
+                                                        "channelWType": "list"
+                                                    },
+                                                    "metadata": {
+                                                        "designer": {
+                                                            "x": 1797,
+                                                            "y": -248
+                                                        },
+                                                        "setupValidation": {
+                                                            "result": {
+                                                                "valid": true,
+                                                                "fields": []
+                                                            },
+                                                            "version": 1,
+                                                            "configuration": "6ce2320ea63fa84c"
+                                                        },
+                                                        "restore": {
+                                                            "expect": {
+                                                                "parse": {
+                                                                    "mode": "chose"
+                                                                },
+                                                                "mrkdwn": {
+                                                                    "mode": "chose"
+                                                                },
+                                                                "channel": {
+                                                                    "mode": "chose",
+                                                                    "label": "new-leads"
+                                                                },
+                                                                "link_names": {
+                                                                    "mode": "chose"
+                                                                },
+                                                                "channelType": {
+                                                                    "label": "Public channel"
+                                                                },
+                                                                "channelWType": {
+                                                                    "label": "Select from the list"
+                                                                },
+                                                                "unfurl_links": {
+                                                                    "mode": "chose"
+                                                                },
+                                                                "unfurl_media": {
+                                                                    "mode": "chose"
+                                                                },
+                                                                "reply_broadcast": {
+                                                                    "mode": "chose"
+                                                                }
+                                                            },
+                                                            "parameters": {
+                                                                "__IMTCONN__": {
+                                                                    "data": {
+                                                                        "scoped": "true",
+                                                                        "connection": "slack2"
+                                                                    },
+                                                                    "label": "Asad's Slack (user) connection (execioautomations.slack.com - execioautomations)"
+                                                                }
+                                                            }
+                                                        },
+                                                        "parameters": [
+                                                            {
+                                                                "name": "__IMTCONN__",
+                                                                "type": "account:slack2,slack3",
+                                                                "label": "Connection",
+                                                                "required": true
+                                                            }
+                                                        ],
+                                                        "expect": [
+                                                            {
+                                                                "name": "channelWType",
+                                                                "type": "select",
+                                                                "label": "Enter a channel ID or name",
+                                                                "required": true,
+                                                                "validate": {
+                                                                    "enum": [
+                                                                        "manualy",
+                                                                        "list"
+                                                                    ]
+                                                                }
+                                                            },
+                                                            {
+                                                                "name": "text",
+                                                                "type": "text",
+                                                                "label": "Text"
+                                                            },
+                                                            {
+                                                                "name": "blocks",
+                                                                "type": "text",
+                                                                "label": "Blocks"
+                                                            },
+                                                            {
+                                                                "name": "thread_ts",
+                                                                "type": "text",
+                                                                "label": "Thread message ID (time stamp)"
+                                                            },
+                                                            {
+                                                                "name": "reply_broadcast",
+                                                                "type": "boolean",
+                                                                "label": "Reply broadcast"
+                                                            },
+                                                            {
+                                                                "name": "link_names",
+                                                                "type": "boolean",
+                                                                "label": "Link names"
+                                                            },
+                                                            {
+                                                                "name": "parse",
+                                                                "type": "boolean",
+                                                                "label": "Parse message text"
+                                                            },
+                                                            {
+                                                                "name": "mrkdwn",
+                                                                "type": "boolean",
+                                                                "label": "Use markdown"
+                                                            },
+                                                            {
+                                                                "name": "unfurl_links",
+                                                                "type": "boolean",
+                                                                "label": "Unfurl primarily text-based content"
+                                                            },
+                                                            {
+                                                                "name": "unfurl_media",
+                                                                "type": "boolean",
+                                                                "label": "Unfurl media content"
+                                                            },
+                                                            {
+                                                                "name": "icon_emoji",
+                                                                "type": "text",
+                                                                "label": "Icon emoji"
+                                                            },
+                                                            {
+                                                                "name": "icon_url",
+                                                                "type": "url",
+                                                                "label": "Icon url"
+                                                            },
+                                                            {
+                                                                "name": "username",
+                                                                "type": "text",
+                                                                "label": "User name"
+                                                            },
+                                                            {
+                                                                "name": "channelType",
+                                                                "type": "select",
+                                                                "label": "Channel type",
+                                                                "required": true,
+                                                                "validate": {
+                                                                    "enum": [
+                                                                        "public",
+                                                                        "private",
+                                                                        "im",
+                                                                        "mpim"
+                                                                    ]
+                                                                }
+                                                            },
+                                                            {
+                                                                "name": "channel",
+                                                                "type": "select",
+                                                                "label": "Public channel",
+                                                                "required": true
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": 28,
+                            "module": "slack:CreateMessage",
+                            "version": 4,
+                            "parameters": {
+                                "__IMTCONN__": 11488586
+                            },
+                            "mapper": {
+                                "text": "⚠️ Incomplete submission\nName: {{ifempty(get(4.answers.`4201a29f`; \"textAnswers.answers.1.value\"); \"(no name)\")}}\nEmail: {{ifempty(get(4.answers.`11bc304b`; \"textAnswers.answers.1.value\"); \"(no email)\")}}\nMissing details — follow up manually.",
+                                "parse": false,
+                                "mrkdwn": true,
+                                "channel": "C0C5M1L6D5M",
+                                "channelType": "public",
+                                "channelWType": "list"
+                            },
+                            "metadata": {
+                                "designer": {
+                                    "x": 1753,
+                                    "y": -498
+                                },
+                                "setupValidation": {
+                                    "result": {
+                                        "valid": true,
+                                        "fields": []
+                                    },
+                                    "version": 1,
+                                    "configuration": "99e0822af1cd6b0a"
+                                },
+                                "restore": {
+                                    "expect": {
+                                        "parse": {
+                                            "mode": "chose"
+                                        },
+                                        "mrkdwn": {
+                                            "mode": "chose"
+                                        },
+                                        "channel": {
+                                            "mode": "chose",
+                                            "label": "new-leads"
+                                        },
+                                        "link_names": {
+                                            "mode": "chose"
+                                        },
+                                        "channelType": {
+                                            "label": "Public channel"
+                                        },
+                                        "channelWType": {
+                                            "label": "Select from the list"
+                                        },
+                                        "unfurl_links": {
+                                            "mode": "chose"
+                                        },
+                                        "unfurl_media": {
+                                            "mode": "chose"
+                                        },
+                                        "reply_broadcast": {
+                                            "mode": "chose"
+                                        }
+                                    },
+                                    "parameters": {
+                                        "__IMTCONN__": {
+                                            "data": {
+                                                "scoped": "true",
+                                                "connection": "slack2"
+                                            },
+                                            "label": "Asad's Slack (user) connection (execioautomations.slack.com - execioautomations)"
+                                        }
+                                    }
+                                },
+                                "parameters": [
+                                    {
+                                        "name": "__IMTCONN__",
+                                        "type": "account:slack2,slack3",
+                                        "label": "Connection",
+                                        "required": true
+                                    }
+                                ],
+                                "expect": [
+                                    {
+                                        "name": "channelWType",
+                                        "type": "select",
+                                        "label": "Enter a channel ID or name",
+                                        "required": true,
+                                        "validate": {
+                                            "enum": [
+                                                "manualy",
+                                                "list"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "name": "text",
+                                        "type": "text",
+                                        "label": "Text"
+                                    },
+                                    {
+                                        "name": "blocks",
+                                        "type": "text",
+                                        "label": "Blocks"
+                                    },
+                                    {
+                                        "name": "thread_ts",
+                                        "type": "text",
+                                        "label": "Thread message ID (time stamp)"
+                                    },
+                                    {
+                                        "name": "reply_broadcast",
+                                        "type": "boolean",
+                                        "label": "Reply broadcast"
+                                    },
+                                    {
+                                        "name": "link_names",
+                                        "type": "boolean",
+                                        "label": "Link names"
+                                    },
+                                    {
+                                        "name": "parse",
+                                        "type": "boolean",
+                                        "label": "Parse message text"
+                                    },
+                                    {
+                                        "name": "mrkdwn",
+                                        "type": "boolean",
+                                        "label": "Use markdown"
+                                    },
+                                    {
+                                        "name": "unfurl_links",
+                                        "type": "boolean",
+                                        "label": "Unfurl primarily text-based content"
+                                    },
+                                    {
+                                        "name": "unfurl_media",
+                                        "type": "boolean",
+                                        "label": "Unfurl media content"
+                                    },
+                                    {
+                                        "name": "icon_emoji",
+                                        "type": "text",
+                                        "label": "Icon emoji"
+                                    },
+                                    {
+                                        "name": "icon_url",
+                                        "type": "url",
+                                        "label": "Icon url"
+                                    },
+                                    {
+                                        "name": "username",
+                                        "type": "text",
+                                        "label": "User name"
+                                    },
+                                    {
+                                        "name": "channelType",
+                                        "type": "select",
+                                        "label": "Channel type",
+                                        "required": true,
+                                        "validate": {
+                                            "enum": [
+                                                "public",
+                                                "private",
+                                                "im",
+                                                "mpim"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "name": "channel",
+                                        "type": "select",
+                                        "label": "Public channel",
+                                        "required": true
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "metadata": {
+        "instant": false,
+        "version": 1,
+        "scenario": {
+            "roundtrips": 1,
+            "maxErrors": 3,
+            "autoCommit": true,
+            "autoCommitTriggerLast": true,
+            "sequential": false,
+            "slots": null,
+            "confidential": false,
+            "dataloss": false,
+            "dlq": true,
+            "freshVariables": false
+        },
+        "designer": {
+            "orphans": []
+        },
+        "zone": "eu1.make.com",
+        "notes": []
+    }
+}
