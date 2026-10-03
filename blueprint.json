@@ -6,8 +6,8 @@
             "module": "google-forms:watchResponses",
             "version": 2,
             "parameters": {
-                "__IMTCONN__": 11487092,
-                "formId": "1DQAmPwLMHr3BSNpLm-Ooekx-yEebhpSj0qzu84qUO_4",
+                "__IMTCONN__": 0,
+                "formId": "YOUR_FORM_ID",
                 "limit": 6
             },
             "mapper": {},
@@ -876,7 +876,7 @@
             "module": "airtable:makeApiCall",
             "version": 3,
             "parameters": {
-                "__IMTCONN__": 11487710
+                “__IMTCONN__”: 0
             },
             "filter": null,
             "mapper": {
@@ -890,7 +890,7 @@
                         "value": "LOWER({Email}) = \"{{lower(trim(get(4.answers.`11bc304b`; \"textAnswers.answers.1.value\")))}}\""
                     }
                 ],
-                "url": "v0/app3kJfLdlgpL7AOK/tbloGe5mA3fPIOrE2",
+                "url": "v0/YOUR_BASE_ID/YOUR_TABLE_ID",
                 "method": "GET"
             },
             "metadata": {
@@ -1025,7 +1025,7 @@
                             "module": "airtable:ActionCreateRecord",
                             "version": 3,
                             "parameters": {
-                                "__IMTCONN__": 11487710
+                                “__IMTCONN__”: 0
                             },
                             "filter": {
                                 "name": "New lead",
@@ -1048,8 +1048,8 @@
                                 ]
                             },
                             "mapper": {
-                                "base": "app3kJfLdlgpL7AOK",
-                                "table": "tbloGe5mA3fPIOrE2",
+                                "base": "YOUR_BASE_ID",
+                                "table": "YOUR_TABLE_ID",
                                 "record": {
                                     "fld336PqhcmjgnQHC": "{{ifempty(parseNumber(replace(get(4.answers.`6bc0bfb0`; \"textAnswers.answers.1.value\"); \"/[^0-9.]/g\"; )); 0)}}",
                                     "fldKwlK2swRKBj5nb": "{{formatDate(4.createTime; \"YYYY-MM-DDTHH:mm:ssZ\"; \"Asia/Kolkata\")}}",
@@ -1401,7 +1401,7 @@
                                                         "text": "❌ Airtable write failed\nName: {{get(4.answers.`4201a29f`; \"textAnswers.answers.1.value\")}}\nError: {{2.error.message}}",
                                                         "parse": false,
                                                         "mrkdwn": true,
-                                                        "channel": "C0C5M1L6D5M",
+                                                        "channel": "YOUR_SLACK_CHANNEL_ID",
                                                         "channelType": "public",
                                                         "channelWType": "list"
                                                     },
@@ -1610,7 +1610,7 @@
                                 "text": "🔥 New high-value lead\nName: {{get(4.answers.`4201a29f`; \"textAnswers.answers.1.value\")}}\nService: {{get(4.answers.`29a0b389`; \"textAnswers.answers.1.value\")}}\nBudget: {{get(4.answers.`6bc0bfb0`; \"textAnswers.answers.1.value\")}}\nMohammed — please call today.",
                                 "parse": false,
                                 "mrkdwn": true,
-                                "channel": "C0C5M1L6D5M",
+                                "channel": "YOUR_SLACK_CHANNEL_ID",
                                 "channelType": "public",
                                 "channelWType": "list"
                             },
@@ -1781,7 +1781,7 @@
                             "module": "airtable:ActionUpdateRecords",
                             "version": 3,
                             "parameters": {
-                                "__IMTCONN__": 11487710
+                                “__IMTCONN__”: 0
                             },
                             "filter": {
                                 "name": "Existing lead",
@@ -1804,8 +1804,8 @@
                             },
                             "mapper": {
                                 "id": "{{get(24.body; \"records.1.id\")}}",
-                                "base": "app3kJfLdlgpL7AOK",
-                                "table": "tbloGe5mA3fPIOrE2",
+                                "base": "YOUR_BASE_ID",
+                                "table": "YOUR_TABLE_ID",
                                 "record": {
                                     "fldQOccUbZw8KtXWx": "{{get(24.body; \"records.1.fields.Notes\")}}\nService: {{get(4.answers.`29a0b389`; \"textAnswers.answers.1.value\")}}\nBudget: {{get(4.answers.`6bc0bfb0`; \"textAnswers.answers.1.value\")}}",
                                     "fldiXl7BBLHnN7kiO": "{{get(4.answers.`11bc304b`; \"textAnswers.answers.1.value\")}}",
@@ -2047,7 +2047,7 @@
                                                         "text": "{{21.error.message}}",
                                                         "parse": false,
                                                         "mrkdwn": true,
-                                                        "channel": "C0C5M1L6D5M",
+                                                        "channel": "YOUR_SLACK_CHANNEL_ID",
                                                         "channelType": "public",
                                                         "channelWType": "list"
                                                     },
@@ -2244,7 +2244,7 @@
                                 "text": "🔁 Repeat enquiry — existing record updated\r\nName: {{get(4.answers.`4201a29f`; \"textAnswers.answers.1.value\")}}\r\nService: {{get(4.answers.`29a0b389`; \"textAnswers.answers.1.value\")}}\r\nBudget: {{get(4.answers.`6bc0bfb0`; \"textAnswers.answers.1.value\")}}",
                                 "parse": false,
                                 "mrkdwn": true,
-                                "channel": "C0C5M1L6D5M",
+                                "channel": "YOUR_SLACK_CHANNEL_ID",
                                 "channelType": "public",
                                 "channelWType": "list"
                             },
@@ -2415,7 +2415,7 @@
                             "module": "airtable:ActionCreateRecord",
                             "version": 3,
                             "parameters": {
-                                "__IMTCONN__": 11487710
+                                “__IMTCONN__”: 0
                             },
                             "filter": {
                                 "name": "Incomplete",
@@ -2435,8 +2435,8 @@
                                 ]
                             },
                             "mapper": {
-                                "base": "app3kJfLdlgpL7AOK",
-                                "table": "tbloGe5mA3fPIOrE2",
+                                "base": "YOUR_BASE_ID",
+                                "table": "YOUR_TABLE_ID",
                                 "record": {
                                     "fldfLDd5aGPb8NYVS": "{{ifempty(get(4.answers.`29a0b389`; \"textAnswers.answers.1.value\"); \"Unknown\")}}",
                                     "fldiXl7BBLHnN7kiO": "{{get(4.answers.`11bc304b`; \"textAnswers.answers.1.value\")}}",
@@ -2798,7 +2798,7 @@
                                                         "text": "{{26.error.message}}",
                                                         "parse": false,
                                                         "mrkdwn": true,
-                                                        "channel": "C0C5M1L6D5M",
+                                                        "channel": "YOUR_SLACK_CHANNEL_ID",
                                                         "channelType": "public",
                                                         "channelWType": "list"
                                                     },
@@ -2977,7 +2977,7 @@
                                 "text": "⚠️ Incomplete submission\nName: {{ifempty(get(4.answers.`4201a29f`; \"textAnswers.answers.1.value\"); \"(no name)\")}}\nEmail: {{ifempty(get(4.answers.`11bc304b`; \"textAnswers.answers.1.value\"); \"(no email)\")}}\nMissing details — follow up manually.",
                                 "parse": false,
                                 "mrkdwn": true,
-                                "channel": "C0C5M1L6D5M",
+                                "channel": "YOUR_SLACK_CHANNEL_ID",
                                 "channelType": "public",
                                 "channelWType": "list"
                             },
